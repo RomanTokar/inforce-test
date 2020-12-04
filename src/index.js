@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import LocalStorageProvider from './contexts/LocalStorageContext';
+import FilterProvider from './contexts/FilterContext';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <LocalStorageProvider>
+    <FilterProvider>
+      <App/>
+    </FilterProvider>
+  </LocalStorageProvider>,
   document.getElementById('root')
 );
 
